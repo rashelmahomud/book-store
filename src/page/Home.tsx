@@ -38,6 +38,7 @@ export default function Home() {
         </div>
       </div>
       <Footer />
+      {/* //this is footer section  */}
     </>
   );
 }
