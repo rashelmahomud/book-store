@@ -4,6 +4,8 @@ import Products from "../page/Products";
 import App from "../App";
 import PageNotFound from "../page/PageNotFound";
 import ProductDetails from "../page/productDetails";
+import Login from "../page/Login";
+import SignUp from "../page/SignUp";
 
 const routes = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const routes = createBrowserRouter([
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
       },
       {
         path: "*",

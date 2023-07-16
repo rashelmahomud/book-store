@@ -33,16 +33,19 @@ const Navber = () => {
               : "top-[-490px] lg:opacity-100 opacity-0"
           }`}
         >
-          <div className="lg:ml-8 lg:my-0 my-7 text-xl cursor-pointer hover:border-b-2 duration-500 hover:text-blue-400 ">
-            <ul className="flex items-center gap-5">
-              <li>
+          <div className="lg:ml-8 lg:my-0 my-7 text-xl cursor-pointer  ">
+            <ul className="flex items-center gap-5 ">
+              <li className="hover:border-b-2 duration-500 hover:text-blue-400">
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              <li className="hover:border-b-2 duration-500 hover:text-blue-400">
                 <Link to="/products">Products</Link>
               </li>
-              <li>
+              <li className="hover:border-b-2 duration-500 hover:text-blue-400">
                 <Link to="/checkout">Checkout</Link>
+              </li>
+              <li className="hover:border-b-2 duration-500 hover:text-blue-400">
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </div>
