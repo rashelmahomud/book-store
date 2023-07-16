@@ -30,4 +30,5 @@ export interface IProduct {
   price: number;
   quantity?: number;
   status: boolean;
+  rating: number;
 }

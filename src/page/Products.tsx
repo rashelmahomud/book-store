@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../types/globalTypes";
+import ProductCard from "../components/ProductCard";
 
 export default function Products() {
   const [data, setData] = useState<IProduct[]>([]);
@@ -24,28 +25,23 @@ export default function Products() {
     console.log(value);
   };
 
-  let productsData;
+  // let productsData;
 
-  if (status) {
-    productsData = data.filter(
-      (item) => item.status === true && item.price < priceRange
-    );
-  } else if (priceRange > 0) {
-    productsData = data.filter((item) => item.price < priceRange);
-  } else {
-    productsData = data;
-  }
+  // if (status) {
+  //   productsData = data.filter(
+  //     (item) => item.status === true && item.price < priceRange
+  //   );
+  // } else if (priceRange > 0) {
+  //   productsData = data.filter((item) => item.price < priceRange);
+  // } else {
+  //   productsData = data;
+  // }
 
   return (
     <div className="grid grid-cols-12 max-w-7xl mx-auto relative ">
       <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
-        {productsData?.map((product) => (
-          // <ProductCard product={product} />
-          <>
-            <p>{product.name}</p>
-            <p>{product.details}</p>
-            <img src={product.img} />
-          </>
+        {data?.map((product) => (
+          <ProductCard product={product} />
         ))}
       </div>
     </div>

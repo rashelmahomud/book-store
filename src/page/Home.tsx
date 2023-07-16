@@ -1,5 +1,4 @@
 import Footer from "../layots/Footer";
-import banner from "../../public/banner.jpg";
 import banner2 from "../../public/banner2.jpg";
 import { Link } from "react-router-dom";
 
