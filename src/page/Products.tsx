@@ -1,0 +1,53 @@
+import { useEffect, useState } from "react";
+import { IProduct } from "../types/globalTypes";
+
+export default function Products() {
+  const [data, setData] = useState<IProduct[]>([]);
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    fetch("./AcadamicBooks.json")
+      .then((res) => res.json())
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      .then((data) => setData(data));
+  }, []);
+
+  // const { toast } = useToast();
+
+  //! Dummy Data
+
+  const status = true;
+  const priceRange = 100;
+
+  //! **
+
+  const handleSlider = (value: number[]) => {
+    console.log(value);
+  };
+
+  let productsData;
+
+  if (status) {
+    productsData = data.filter(
+      (item) => item.status === true && item.price < priceRange
+    );
+  } else if (priceRange > 0) {
+    productsData = data.filter((item) => item.price < priceRange);
+  } else {
+    productsData = data;
+  }
+
+  return (
+    <div className="grid grid-cols-12 max-w-7xl mx-auto relative ">
+      <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
+        {productsData?.map((product) => (
+          // <ProductCard product={product} />
+          <>
+            <p>{product.name}</p>
+            <p>{product.details}</p>
+            <img src={product.img} />
+          </>
+        ))}
+      </div>
+    </div>
+  );
+}
