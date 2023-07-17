@@ -3,12 +3,24 @@ import { FaBars } from "react-icons/fa";
 import { FiDelete } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import logo from "../../public/logo1.png";
+import { useAppDispatch, useAppSelector } from "../redux/hook";
+import { signOut } from "firebase/auth";
+import { auth } from "../lib/firebase";
+import { setUser } from "../redux/features/user/userSlice";
 
 const Navber = () => {
   const [open, setOpen] = useState(false);
+  const { user } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
+  const handelLogOut = () => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    signOut(auth).then(() => {
+      dispatch(setUser(null));
+    });
+  };
 
   return (
-    <div className=" w-full fixed z-10 top-0 left-0 ">
+    <div className=" w-full  z-10 top-0 left-0 ">
       <div className="lg:flex items-center justify-between  py-4 lg:px-10 px-10">
         <div className="font-bold text-3xl cursor-pointer flex items-center font-[poppins] text-gray-800 gap-3">
           <span className="text-3xl text-indigo-600">
@@ -44,9 +56,19 @@ const Navber = () => {
               <li className="hover:border-b-2 duration-500 hover:text-blue-400">
                 <Link to="/checkout">Checkout</Link>
               </li>
-              <li className="hover:border-b-2 duration-500 hover:text-blue-400">
-                <Link to="/login">Login</Link>
-              </li>
+              {!user.email && (
+                <li className="hover:border-b-2 duration-500 hover:text-blue-400">
+                  <Link to="/login">Login</Link>
+                </li>
+              )}
+              {user.email && (
+                <li
+                  onClick={handelLogOut}
+                  className="hover:border-b-2 duration-500 hover:text-blue-400"
+                >
+                  <Link to="/login">LogOut</Link>
+                </li>
+              )}
             </ul>
           </div>
 

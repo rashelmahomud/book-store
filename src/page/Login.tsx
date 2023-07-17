@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { useForm } from "react-hook-form";
 import img from "../../public/banner2.jpg";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../redux/hook";
+import { loginUser } from "../redux/features/user/userSlice";
 
 interface LoginFormInputs {
   email: string;
@@ -10,12 +13,15 @@ interface LoginFormInputs {
 export default function Login() {
   const { register, handleSubmit } = useForm<LoginFormInputs>();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const handelGoogleLogin = () => {
     console.log("hello");
   };
   const onSubmit = (data: LoginFormInputs) => {
     console.log(data);
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    dispatch(loginUser({ email: data.email, password: data.password }));
   };
   return (
     <div className="flex h-screen items-center">
@@ -26,8 +32,7 @@ export default function Login() {
       <div className="mt-20 w-1/3 grid place-items-center">
         <div className="bg-[#FFFAF4] rounded-lg  p-10">
           <h1 className="mb-10 font-medium text-2xl">Login</h1>
-          {/* //onSubmit={handleSubmit(onsubmit)} */}
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-3">
               <div className="flex flex-col rounded">
                 <label htmlFor="email" className="ml-5">

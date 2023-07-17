@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useEffect, useState } from "react";
 import { IProduct } from "../types/globalTypes";
 import ProductCard from "../components/ProductCard";
@@ -6,10 +7,10 @@ export default function Products() {
   const [data, setData] = useState<IProduct[]>([]);
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    fetch("./AcadamicBooks.json")
+    fetch("http://localhost:5000/product")
       .then((res) => res.json())
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      .then((data) => setData(data));
+      .then((data) => setData(data?.data));
   }, []);
 
   // const { toast } = useToast();

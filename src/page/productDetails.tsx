@@ -8,10 +8,10 @@ export default function ProductDetails() {
   //! Temporary code, should be replaced with redux
   const [data, setData] = useState<IProduct[]>([]);
   useEffect(() => {
-    void fetch("../../public/AcadamicBooks.json")
+    void fetch("http://localhost:5000/product")
       .then((res) => res.json())
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-      .then((data) => setData(data));
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+      .then((data) => console.log(data?.data));
   }, []);
 
   const product = data?.find((item) => item._id === Number(id));
