@@ -19,9 +19,9 @@ export default function SignUp() {
   };
 
   const onSubmit = (data: LoginFormInputs) => {
-    console.log(data);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     dispatch(createUser({ email: data.email, password: data.password }));
+    navigate("/");
   };
   return (
     <div className="flex h-screen items-center">
@@ -31,7 +31,7 @@ export default function SignUp() {
 
       <div className="mt-20 w-1/3 grid place-items-center">
         <div className="bg-[#FFFAF4] rounded-lg grid place-items-center  p-10">
-          <h1 className="mb-10 font-medium text-2xl">Login</h1>
+          <h1 className="mb-10 font-medium text-2xl">Regester your Account</h1>
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-3">
@@ -68,7 +68,7 @@ export default function SignUp() {
                   type="password"
                   placeholder="confirm password"
                   className="bg-gray-50 p-2"
-                  id="password"
+                  id="confirm-password"
                   {...register("password")}
                 />
               </div>
@@ -85,7 +85,7 @@ export default function SignUp() {
                   Don't have an account?{" "}
                   <span
                     className="text-primary hover:underline cursor-pointer"
-                    onClick={() => navigate("/signup")}
+                    onClick={() => navigate("/login")}
                   >
                     Sign up
                   </span>

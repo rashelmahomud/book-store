@@ -19,9 +19,9 @@ export default function Login() {
     console.log("hello");
   };
   const onSubmit = (data: LoginFormInputs) => {
-    console.log(data);
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     dispatch(loginUser({ email: data.email, password: data.password }));
+    navigate("/");
   };
   return (
     <div className="flex h-screen items-center">
