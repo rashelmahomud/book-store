@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useNavigate, useParams } from "react-router-dom";
@@ -6,14 +7,19 @@ import {
   useSingleProductQuery,
 } from "../redux/features/product/productApi";
 import ProductReview from "../components/productReview";
+import { useAppDispatch } from "../redux/hook";
+import { IProduct } from "../types/globalTypes";
+import { addToCart } from "../redux/features/cart/cartSlice";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-
+  const dispatch = useAppDispatch();
+  const handleAddProduct = (product: IProduct) => {
+    dispatch(addToCart(product));
+  };
   const { data: product, isLoading } = useSingleProductQuery(id);
   const [deleteBook, { isSuccess: deleteSucces }] = useDeleteBookMutation();
-  console.log("hello", deleteBook);
 
   const handelDelete = (id: any) => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -32,7 +38,13 @@ export default function ProductDetails() {
           <p className="text-xl">Page: {product?.pages}</p>
           <p className="text-xl">Formet: {product?.format}</p>
           <p className="text-xl">Details:: {product?.details}</p>
-          <button className="font-semibold">Add to cart</button> <br />
+          <button
+            onClick={() => handleAddProduct(product)}
+            className="font-semibold"
+          >
+            Add to cart
+          </button>{" "}
+          <br />
           <div>
             <span>The product delete permission only for admin</span>
             <button

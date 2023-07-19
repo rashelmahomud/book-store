@@ -26,7 +26,7 @@ export default function ProductCard({ product }: IProps) {
       </p>
       <p className="text-sm">Price: {product?.price}</p>
       <button
-        className="border py-2 px-3"
+        className="border py-2 px-3 border px-3 py-2"
         onClick={() => handleAddProduct(product)}
       >
         Add to cart
