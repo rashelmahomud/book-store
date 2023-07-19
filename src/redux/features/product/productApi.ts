@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { api } from "../../api/apiSlice";
 
 const productApi = api.injectEndpoints({
@@ -30,6 +31,12 @@ const productApi = api.injectEndpoints({
         body: data,
       }),
     }),
+    deleteBook: builder.mutation({
+      query: (id) => ({
+        url: `/product/${id}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
@@ -39,4 +46,5 @@ export const {
   usePostCommentMutation,
   useGetCommentQuery,
   usePostBookMutation,
+  useDeleteBookMutation,
 } = productApi;

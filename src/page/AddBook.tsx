@@ -41,10 +41,10 @@ const AddNewBook = () => {
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleSubmit(handelFormSubmit)}
       >
-        <div className="grid">
+        <div className="grid lg:grid-cols-2 gap-10 border p-5">
           {/* <label className='text-2xl inline-block' htmlFor="title">Title</label> */}
           <input
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 border px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             type="text"
             placeholder="book title"
             autoCapitalize="none"
@@ -54,117 +54,117 @@ const AddNewBook = () => {
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="author"
             {...register("pages", { required: "title is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="author"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="Format"
             {...register("format", { required: "title is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="author"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="Description"
             {...register("description", { required: "title is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="author"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="file"
             {...register("file", { required: "title is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="genre"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="interactive"
             {...register("interactive", { required: "genre is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="publicationDate"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="writer"
             {...register("Writer1", {
               required: "publication Date is required",
             })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="publicationDate"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="writer "
             {...register("Writer2")}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="publicationDate"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="writer"
             {...register("Writer3", {
               required: "publication Date is required",
             })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="publicationDate"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="writer"
             {...register("Writer4", {
               required: "publication Date is required",
             })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="publicationDate"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            placeholder="Detials"
             {...register("details", {
               required: "publication Date is required",
             })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
             {...register("img", { required: "image link is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
             {...register("img1", { required: "image link is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
             {...register("img2", { required: "image link is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
             {...register("img3", { required: "image link is required" })}
           />
           <input
             type="text"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
             {...register("img4", { required: "image link is required" })}
           />
           <input
             type="number"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
             {...register("price", { required: "image link is required" })}
           />
           <input
             type="number"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
             {...register("quantity", { required: "image link is required" })}
           />
           <input
             type="number"
-            className="py-2 mt-3 px-4 block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
+            className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
             {...register("rating", { required: "image link is required" })}
           />
