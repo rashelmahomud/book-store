@@ -39,7 +39,9 @@
     "img2": "https://i.ibb.co/5xP8DHC/satu.jpg",
     "img3": "https://i.ibb.co/L6TvvPb/Amit.jpg",
     "img4": "https://i.ibb.co/QNkTfZg/tasmia-Esika.jpg",
-    "price": "70"
+    "price": "70",
+    "rating": 6,
+    "status": true
   },
   {
     "_id": 3,
@@ -59,7 +61,9 @@
     "img2": "https://i.ibb.co/n65NtF5/Md-Badsa.png",
     "img3": "https://i.ibb.co/qjNJQSF/Rashal-raj.jpg",
     "img4": "https://i.ibb.co/L6TvvPb/Amit.jpg",
-    "price": "110"
+    "price": "110",
+    "rating": 5,
+    "status": true
   },
   {
     "_id": 4,
@@ -79,7 +83,9 @@
     "img2": "https://i.ibb.co/3Rdcq3X/safi.jpg",
     "img3": "https://i.ibb.co/qjNJQSF/Rashal-raj.jpg",
     "img4": "https://i.ibb.co/5xP8DHC/satu.jpg",
-    "price": "110"
+    "price": "110",
+    "rating": 4,
+    "status": true
   },
   {
     "_id": 5,
@@ -99,7 +105,9 @@
     "img2": "https://i.ibb.co/L6TvvPb/Amit.jpg",
     "img3": "https://i.ibb.co/QNkTfZg/tasmia-Esika.jpg",
     "img4": "https://i.ibb.co/qjNJQSF/Rashal-raj.jpg",
-    "price": "87"
+    "price": "87",
+    "rating": 11,
+    "status": true
   },
   {
     "_id": 6,
@@ -119,7 +127,9 @@
     "img2": "https://i.ibb.co/5xP8DHC/satu.jpg",
     "img3": "https://i.ibb.co/qjNJQSF/Rashal-raj.jpg",
     "img4": "https://i.ibb.co/n65NtF5/Md-Badsa.png",
-    "price": "110"
+    "price": "110",
+    "rating": 2,
+    "status": true
   },
   {
     "_id": 7,
@@ -139,7 +149,9 @@
     "img2": "https://i.ibb.co/5xP8DHC/satu.jpg",
     "img3": "https://i.ibb.co/3Rdcq3X/safi.jpg",
     "img4": "https://i.ibb.co/L6TvvPb/Amit.jpg",
-    "price": "110"
+    "price": "110",
+    "rating": 5,
+    "status": true
   },
   {
     "_id": 8,
@@ -159,6 +171,8 @@
     "img2": "https://i.ibb.co/n65NtF5/Md-Badsa.png",
     "img3": "https://i.ibb.co/L6TvvPb/Amit.jpg",
     "img4": "https://i.ibb.co/3Rdcq3X/safi.jpg",
-    "price": "110"
+    "price": "110",
+    "rating": 8,
+    "status": true
   }
 ]

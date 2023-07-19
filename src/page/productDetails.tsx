@@ -12,13 +12,16 @@ export default function ProductDetails() {
     <>
       <div className="flex max-w-7xl mx-auto items-center border-b border-gray-300">
         <div className="w-[50%]">
-          <img src={product?.img} alt="" />
+          <img className="lg:w-96" src={product?.img} alt="" />
         </div>
         <div className="w-[50%] space-y-3">
           <h1 className="text-3xl font-semibold">{product?.name}</h1>
           <p className="text-xl">Rating: {product?.rating}</p>
+          <p className="text-xl">Page: {product?.pages}</p>
+          <p className="text-xl">Formet: {product?.format}</p>
+          <p className="text-xl">Details:: {product?.details}</p>
 
-          <button>Add to cart</button>
+          <button className="font-semibold">Add to cart</button>
         </div>
       </div>
       {/* <ProductReview /> */}
