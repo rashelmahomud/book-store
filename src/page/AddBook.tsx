@@ -124,55 +124,57 @@ const AddNewBook = () => {
             type="text"
             className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
-            {...register("img", { required: "image link is required" })}
+            {...register("img")}
           />
           <input
             type="text"
             className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
             placeholder="img"
-            {...register("img1", { required: "image link is required" })}
+            {...register("img1")}
           />
           <input
             type="text"
             className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="img"
-            {...register("img2", { required: "image link is required" })}
+            placeholder="Image"
+            {...register("img2")}
           />
           <input
             type="text"
             className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="img"
-            {...register("img3", { required: "image link is required" })}
+            placeholder="Author Image"
+            {...register("img3")}
           />
           <input
             type="text"
             className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="img"
-            {...register("img4", { required: "image link is required" })}
+            placeholder="author image"
+            {...register("img4")}
           />
           <input
             type="number"
             className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="img"
+            placeholder="Price"
             {...register("price", { required: "image link is required" })}
           />
           <input
             type="number"
             className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="img"
+            placeholder="Quentity"
             {...register("quantity", { required: "image link is required" })}
           />
           <input
             type="number"
             className="py-2 mt-3 px-4 border block w-80 max-w-lg border-gray-200 rounded-md text-lg focus:border-blue-500 focus:ring-blue-500  dark:border-gray-700 dark:text-gray-700"
-            placeholder="img"
+            placeholder="rating"
             {...register("rating", { required: "image link is required" })}
           />
           <p>{}</p>
         </div>
 
         <div className="mt-8 mx-auto text-center">
-          <button className=" btn btn-success">ADD NEW BOOK</button>
+          <button className=" bg-green-200 px-3 py-2 rounded btn btn-success">
+            ADD NEW BOOK
+          </button>
         </div>
       </form>
     </div>

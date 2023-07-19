@@ -18,10 +18,12 @@ const productApi = api.injectEndpoints({
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         body: data,
       }),
+      invalidatesTags: ["comments"],
     }),
     getComment: builder.query({
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       query: (id) => `/comment/${id}`,
+      providesTags: ["comments"],
     }),
     postBook: builder.mutation({
       query: ({ data }) => ({

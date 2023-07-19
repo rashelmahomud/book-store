@@ -48,15 +48,3 @@ export default function Products() {
     </div>
   );
 }
-
-// let productsData;
-
-// if (status) {
-//   productsData = data.filter(
-//     (item) => item.status === true && item.price < priceRange
-//   );
-// } else if (priceRange > 0) {
-//   productsData = data.filter((item) => item.price < priceRange);
-// } else {
-//   productsData = data;
-// }
