@@ -8,6 +8,7 @@ import Login from "../page/Login";
 import SignUp from "../page/SignUp";
 import Cart from "../components/cart";
 import Checkout from "../components/checkout";
+import AddBook from "../page/AddBook";
 
 const routes = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const routes = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/addbook",
+        element: <AddBook />,
       },
       {
         path: "/login",

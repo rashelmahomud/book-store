@@ -57,6 +57,9 @@ const Navber = () => {
               <li className="hover:border-b-2 duration-500 hover:text-blue-400">
                 <Link to="/checkout">Checkout</Link>
               </li>
+              <li className="hover:border-b-2 duration-500 hover:text-blue-400">
+                <Link to="/addbook">Add-Book</Link>
+              </li>
 
               {!user.email && (
                 <li className="hover:border-b-2 duration-500 hover:text-blue-400">

@@ -1,3 +1,8 @@
+import {
+  addToCart,
+  removeOneFromCart,
+  removeToCart,
+} from "../redux/features/cart/cartSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hook";
 import { HiMinus, HiOutlinePlus, HiOutlineTrash } from "react-icons/hi";
 export default function Cart() {
@@ -8,10 +13,6 @@ export default function Cart() {
 
   return (
     <div>
-      {/* <div>
-        <h>Cart</h>
-        <h1>Total: {total.toFixed(2)}</h1>
-      </div> */}
       <div className="space-y-5 p-3 rounded">
         {products.map((product) => (
           <div
@@ -29,13 +30,16 @@ export default function Cart() {
               </p>
             </div>
             <div className="border-l pl-5 flex flex-col justify-between">
-              <button>
+              <button onClick={() => dispatch(addToCart(product))}>
                 <HiOutlinePlus size="20" />
               </button>
-              <button>
+              <button onClick={() => dispatch(removeOneFromCart(product))}>
                 <HiMinus size="20" />
               </button>
-              <button className="bg-red-500 rounded-full p-2 hover:bg-red-400">
+              <button
+                onClick={() => dispatch(removeToCart(product))}
+                className="bg-red-500 rounded-full p-2 hover:bg-red-400"
+              >
                 <HiOutlineTrash size="20" />
               </button>
             </div>

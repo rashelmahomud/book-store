@@ -22,6 +22,14 @@ const productApi = api.injectEndpoints({
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       query: (id) => `/comment/${id}`,
     }),
+    postBook: builder.mutation({
+      query: ({ data }) => ({
+        url: `/product`,
+        method: "POST",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -30,4 +38,5 @@ export const {
   useSingleProductQuery,
   usePostCommentMutation,
   useGetCommentQuery,
+  usePostBookMutation,
 } = productApi;
