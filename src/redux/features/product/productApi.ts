@@ -5,10 +5,10 @@ const productApi = api.injectEndpoints({
     getProduct: builder.query({
       query: () => "/product",
     }),
-    // singleProduct: builder.query({
-    //   query: (id) => `/product/${id}`,
-    // }),
+    singleProduct: builder.query({
+      query: (id) => `/product/${id}`,
+    }),
   }),
 });
 
-export const { useGetProductQuery } = productApi;
+export const { useGetProductQuery, useSingleProductQuery } = productApi;

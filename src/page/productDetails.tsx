@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useParams } from "react-router-dom";
 import { IProduct } from "../types/globalTypes";
+import { useEffect, useState } from "react";
 
 export default function ProductDetails() {
   const { id } = useParams();
+
+  // const { data: product, isLoading } = useSingleProductQuery(id);
 
   //! Temporary code, should be replaced with redux
   const [data, setData] = useState<IProduct[]>([]);
@@ -11,12 +14,12 @@ export default function ProductDetails() {
     void fetch("http://localhost:5000/product")
       .then((res) => res.json())
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-      .then((data) => console.log(data?.data));
+      .then((data) => setData(data?.data));
   }, []);
 
-  const product = data?.find((item) => item._id === Number(id));
+  const product = data?.find((item: IProduct) => item._id === Number(id));
 
-  //! Temporary code ends here
+  // //! Temporary code ends here
 
   return (
     <>
