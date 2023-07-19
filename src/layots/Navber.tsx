@@ -8,6 +8,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../lib/firebase";
 import { setUser } from "../redux/features/user/userSlice";
 import Cart from "../components/cart";
+import Popup from "reactjs-popup";
 
 const Navber = () => {
   const [open, setOpen] = useState(false);
@@ -54,11 +55,17 @@ const Navber = () => {
               <li className="hover:border-b-2 duration-500 hover:text-blue-400">
                 <Link to="/products">Products</Link>
               </li>
+
               {user.email && (
                 <li className="hover:border-b-2 duration-500 hover:text-blue-400">
                   <Link to="/checkout">Checkout</Link>
                 </li>
               )}
+              <li>
+                <Popup trigger={<button> Cart</button>}>
+                  <Cart />
+                </Popup>
+              </li>
               {user.email && (
                 <li className="hover:border-b-2 duration-500 hover:text-blue-400">
                   <Link to="/addbook">Add-Book</Link>
@@ -78,9 +85,6 @@ const Navber = () => {
                   <Link to="/login">LogOut</Link>
                 </li>
               )}
-              <li>
-                <Cart />
-              </li>
             </ul>
           </div>
 
