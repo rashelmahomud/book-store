@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { useAppSelector } from "../redux/hook";
 
 export default function Checkout() {
-  const [scheduled, setScheduled] = useState<boolean>(false);
-
   const { products } = useAppSelector((state) => state.cart);
 
   return (

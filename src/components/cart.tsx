@@ -6,7 +6,7 @@ import {
 import { useAppDispatch, useAppSelector } from "../redux/hook";
 import { HiMinus, HiOutlinePlus, HiOutlineTrash } from "react-icons/hi";
 export default function Cart() {
-  const { products, total } = useAppSelector((state) => state.cart);
+  const { products } = useAppSelector((state) => state.cart);
   console.log(products, "prod");
 
   const dispatch = useAppDispatch();

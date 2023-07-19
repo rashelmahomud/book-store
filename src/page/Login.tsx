@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useForm } from "react-hook-form";
-import img from "../../public/banner2.jpg";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../redux/hook";
 import { loginUser } from "../redux/features/user/userSlice";

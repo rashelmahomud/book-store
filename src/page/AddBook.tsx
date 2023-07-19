@@ -1,11 +1,8 @@
 import { useForm } from "react-hook-form";
-import { useAppSelector } from "../redux/hook";
 import { usePostBookMutation } from "../redux/features/product/productApi";
 import { IProduct } from "../types/globalTypes";
 
 const AddNewBook = () => {
-  const { user } = useAppSelector((state) => state.user);
-
   const [postBook, { isError, isLoading, isSuccess }] = usePostBookMutation();
   console.log(isError);
   console.log(isLoading);
