@@ -1,25 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useParams } from "react-router-dom";
-import { IProduct } from "../types/globalTypes";
-import { useEffect, useState } from "react";
+import { useSingleProductQuery } from "../redux/features/product/productApi";
 
 export default function ProductDetails() {
   const { id } = useParams();
 
-  // const { data: product, isLoading } = useSingleProductQuery(id);
-
-  //! Temporary code, should be replaced with redux
-  const [data, setData] = useState<IProduct[]>([]);
-  useEffect(() => {
-    void fetch("http://localhost:5000/product")
-      .then((res) => res.json())
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-      .then((data) => setData(data?.data));
-  }, []);
-
-  const product = data?.find((item: IProduct) => item._id === Number(id));
-
-  // //! Temporary code ends here
+  const { data: product, isLoading } = useSingleProductQuery(id);
 
   return (
     <>

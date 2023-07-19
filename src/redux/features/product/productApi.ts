@@ -6,6 +6,7 @@ const productApi = api.injectEndpoints({
       query: () => "/product",
     }),
     singleProduct: builder.query({
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       query: (id) => `/product/${id}`,
     }),
   }),
