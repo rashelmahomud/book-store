@@ -18,8 +18,8 @@ export default function ProductDetails() {
   const handleAddProduct = (product: IProduct) => {
     dispatch(addToCart(product));
   };
-  const { data: product, isLoading } = useSingleProductQuery(id);
-  const [deleteBook, { isSuccess: deleteSucces }] = useDeleteBookMutation();
+  const { data: product } = useSingleProductQuery(id);
+  const [deleteBook] = useDeleteBookMutation();
 
   const handelDelete = (id: any) => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises

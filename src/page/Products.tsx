@@ -11,7 +11,7 @@ export default function Products() {
   const [searchProduct, setSearchProduct] = useState([]);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const { data, isLoading } = useGetProductQuery(undefined);
+  const { data } = useGetProductQuery(undefined);
 
   const searchText = (e: any) => {
     // event.prevenDefault();
