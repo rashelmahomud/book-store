@@ -9,7 +9,25 @@ const productApi = api.injectEndpoints({
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       query: (id) => `/product/${id}`,
     }),
+    postComment: builder.mutation({
+      query: ({ id, data }) => ({
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        url: `/comment/${id}`,
+        method: "POST",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        body: data,
+      }),
+    }),
+    getComment: builder.query({
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      query: (id) => `/comment/${id}`,
+    }),
   }),
 });
 
-export const { useGetProductQuery, useSingleProductQuery } = productApi;
+export const {
+  useGetProductQuery,
+  useSingleProductQuery,
+  usePostCommentMutation,
+  useGetCommentQuery,
+} = productApi;

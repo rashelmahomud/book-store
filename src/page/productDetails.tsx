@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useParams } from "react-router-dom";
 import { useSingleProductQuery } from "../redux/features/product/productApi";
+import ProductReview from "../components/productReview";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -24,7 +25,7 @@ export default function ProductDetails() {
           <button className="font-semibold">Add to cart</button>
         </div>
       </div>
-      {/* <ProductReview /> */}
+      <ProductReview id={id!} />
     </>
   );
 }
