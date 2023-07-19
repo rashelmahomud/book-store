@@ -32,14 +32,16 @@ export default function ProductDetails() {
           <p className="text-xl">Page: {product?.pages}</p>
           <p className="text-xl">Formet: {product?.format}</p>
           <p className="text-xl">Details:: {product?.details}</p>
-
-          <button className="font-semibold">Add to cart</button>
-          <button
-            onClick={() => handelDelete(product._id)}
-            className=" btn btn-error"
-          >
-            Delete{" "}
-          </button>
+          <button className="font-semibold">Add to cart</button> <br />
+          <div>
+            <span>The product delete permission only for admin</span>
+            <button
+              onClick={() => handelDelete(product._id)}
+              className=" btn btn-error border bg-red-500 px-3 py-2 rounded text-white"
+            >
+              Delete{" "}
+            </button>
+          </div>
         </div>
       </div>
       <ProductReview id={id!} />
