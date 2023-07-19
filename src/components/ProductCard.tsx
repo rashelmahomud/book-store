@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import { IProduct } from "../types/globalTypes";
+import { useAppDispatch } from "../redux/hook";
+import { addToCart } from "../redux/features/cart/cartSlice";
+import { toast } from "react-hot-toast/headless";
 
 interface IProps {
   product: IProduct;
 }
 
 export default function ProductCard({ product }: IProps) {
+  const dispatch = useAppDispatch();
   const handleAddProduct = (product: IProduct) => {
-    //   toast({
-    //     description: "Product Added",
-    //   });
+    dispatch(addToCart(product));
+    toast("Product Added");
   };
   return (
     <div className="rounded-2xl h-[480px] flex flex-col items-start justify-between p-5 overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all gap-2">

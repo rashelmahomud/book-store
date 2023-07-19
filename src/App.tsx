@@ -5,6 +5,7 @@ import { setLoading, setUser } from "./redux/features/user/userSlice";
 import { useAppDispatch } from "./redux/hook";
 import { auth } from "./lib/firebase";
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -22,6 +23,7 @@ function App() {
   }, [dispatch]);
   return (
     <>
+      <Toaster />
       <MainLayout />
     </>
   );
